@@ -1,7 +1,9 @@
 # Dream-Pizza online shop
+---
+*Цель проекта - совершенствование навыков разработки frontend приложений с использованием библиотеки(фреймворка) React*
 
-*Цель проекта - отработка и совершенствование разработки frontend приложений с использованием библиотеки(фреймворка) React*
-
+*The goal of the project is to improve the skills of frontend application development using the React library (framework)*
+---
 ## Stack
 
 *Используемые технологии*
