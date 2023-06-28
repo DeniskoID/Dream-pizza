@@ -1,10 +1,10 @@
 * {
-  padding: 0;
-  margin: 0;
   list-style: none;
+  margin: 0;
   outline: none;
-  font-family: 'Nunito', Roboto, system-ui, Tahoma, sans-serif;
+  padding: 0;
   box-sizing: border-box;
+  font-family: 'Nunito Sans', 'Roboto', system-ui, 'Tahoma', sans-serif;
 }
 
 html {
@@ -45,11 +45,10 @@ a {
 }
 
 @mixin noselect {
-  -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
   -moz-user-select: none; /* Old versions of Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Opera and Firefox */
+  -webkit-touch-callout: none; /* iOS Safari */
 }

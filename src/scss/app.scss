@@ -24,14 +24,22 @@ body {
   padding: 40px 0;
 
   &__title {
-    margin: 35px 0;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    font-weight: 800;
+    font-size: 38px;
   }
 
   &__items {
+    display: grid;
+    column-gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, auto));
+  }
+
+  &__items-cart {
     display: flex;
-    column-gap: 35px;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
   }
 
   &__top {
@@ -39,7 +47,7 @@ body {
     align-items: flex-start;
     justify-content: space-between;
 
-    @media screen and (max-width: 700px) {
+    @media screen and (width <= 700px) {
       flex-wrap: wrap;
       gap: 30px;
     }
@@ -87,10 +95,11 @@ body {
   }
 
   &__clear {
+    @include noselect;
+
     display: flex;
     align-items: center;
     cursor: pointer;
-    @include noselect();
 
     span {
       display: inline-block;
@@ -108,7 +117,7 @@ body {
     &:hover {
       svg {
         path {
-          stroke: darken($color: #b6b6b6, $amount: 50);
+          stroke: darken(#b6b6b6, 50%);
         }
       }
 
@@ -194,10 +203,6 @@ body {
       justify-content: flex-end;
       width: 4%;
 
-      .button {
-        border-color: darken($color: $gray-line, $amount: 10);
-      }
-
       svg {
         transform: rotate(45deg);
 
@@ -207,6 +212,8 @@ body {
       }
 
       .button {
+        border-color: darken($gray-line, 10%);
+
         svg {
           position: relative;
           width: 11.5px;
@@ -253,9 +260,8 @@ body {
         width: 210px;
 
         span {
-          color: darken($color: $gray-line, $amount: 20);
           font-weight: 500;
-          font-weight: 600;
+          color: darken($color: $gray-line, $amount: 20);
         }
 
         &:hover {

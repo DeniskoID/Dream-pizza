@@ -1,3 +1,4 @@
+/* stylelint-disable-next-line import-notation */
 @import '../variables';
 
 .header {
@@ -12,10 +13,17 @@
     row-gap: 20px;
   }
 
-  &__logo {
-    display: flex;
+  a {
     flex-grow: 1;
     flex-basis: 227px;
+
+    @media screen and (width <= 444px) {
+      flex-grow: 0;
+    }
+  }
+
+  &__logo {
+    display: flex;
 
     img {
       margin-right: 15px;
@@ -24,12 +32,14 @@
     h1 {
       font-weight: 800;
       font-size: 24px;
+      line-height: 100%;
       letter-spacing: 1%;
       text-transform: uppercase;
       color: #181818;
     }
 
     p {
+      line-height: 100%;
       color: #7b7b7b;
     }
   }
