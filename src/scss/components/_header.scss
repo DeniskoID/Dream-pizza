@@ -13,8 +13,14 @@
     row-gap: 20px;
   }
 
-  a {
-    flex-grow: 1;
+  &__search {
+    flex-grow: 0.5;
+    flex-basis: 280px;
+    margin: 0 auto;
+  }
+
+  &__link {
+    flex-grow: 0;
     flex-basis: 227px;
 
     @media screen and (width <= 444px) {
@@ -24,6 +30,10 @@
 
   &__logo {
     display: flex;
+
+    div {
+      max-width: 174px;
+    }
 
     img {
       margin-right: 15px;

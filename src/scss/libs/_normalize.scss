@@ -44,6 +44,11 @@ a {
   text-decoration: none;
 }
 
+input {
+  border: none;
+  width: 100%;
+}
+
 @mixin noselect {
   -webkit-user-select: none; /* Safari */
   -moz-user-select: none; /* Old versions of Firefox */

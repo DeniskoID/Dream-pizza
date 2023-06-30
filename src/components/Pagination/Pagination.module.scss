@@ -1,0 +1,36 @@
+.root {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+
+  li {
+    display: inline-block;
+    border-radius: 50%;
+
+    /* stylelint-disable-next-line selector-pseudo-class-no-unknown */
+    &:global {
+      &.selected a {
+        color: #fff;
+        background-color: #fe5f1e;
+      }
+    }
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #fe5f1e;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+      color: #fff;
+      background-color: #fe5f1e;
+    }
+  }
+}
