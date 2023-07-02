@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import logoSvg from '../assets/img/pizza-logo.svg';
 import Search from './Search';
 
-function Header({ searchValue, setSearchValue }) {
+function Header() {
   return (
     <div className="header">
       <div className="container">
@@ -18,7 +18,7 @@ function Header({ searchValue, setSearchValue }) {
           </div>
         </Link>
         <div className="header__search">
-          <Search searchValue={searchValue} setSearchValue={setSearchValue} />
+          <Search />
         </div>
         <div className="header__cart">
           <Link to="/cart" className="button button--cart">
