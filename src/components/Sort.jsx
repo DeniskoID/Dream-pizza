@@ -1,19 +1,24 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-function Sort({ value, onChangeSort }) {
-  const [open, setOpen] = React.useState(false);
-  const list = [
-    { name: 'популярности(up)', sortProperty: 'rating' },
-    { name: 'популярности(down)', sortProperty: '-rating' },
-    { name: 'цене(up)', sortProperty: 'price' },
-    { name: 'цене(down)', sortProperty: '-price' },
-    { name: 'алфавиту(up)', sortProperty: 'title' },
-    { name: 'алфавиту(down)', sortProperty: '-title' },
-  ];
-  // const sortName = list[value].name;
+import { useSelector, useDispatch } from 'react-redux';
+import { setSort } from '../redux/slices/filterSlice';
 
-  const onClickListItem = (i) => {
-    onChangeSort(i);
+const list = [
+  { name: 'популярности(up)', sortProperty: 'rating' },
+  { name: 'популярности(down)', sortProperty: '-rating' },
+  { name: 'цене(up)', sortProperty: 'price' },
+  { name: 'цене(down)', sortProperty: '-price' },
+  { name: 'алфавиту(up)', sortProperty: 'title' },
+  { name: 'алфавиту(down)', sortProperty: '-title' },
+];
+
+function Sort() {
+  const dispatch = useDispatch();
+  const sort = useSelector((state) => state.filter.sort);
+
+  const [open, setOpen] = React.useState(false);
+
+  const onClickListItem = (obj) => {
+    dispatch(setSort(obj));
     setOpen(false);
   };
 
@@ -27,7 +32,7 @@ function Sort({ value, onChangeSort }) {
           />
         </svg>
         <b>Сортировка&nbsp;по:</b>
-        <span onClick={() => setOpen(!open)}>{value.name}</span>
+        <span onClick={() => setOpen(!open)}>{sort.name}</span>
       </div>
       {open && (
         <div className="sort__popup">
@@ -36,7 +41,7 @@ function Sort({ value, onChangeSort }) {
               <li
                 key={i}
                 onClick={() => onClickListItem(obj)}
-                className={value.sortProperty === obj.sortProperty ? 'active' : ''}
+                className={sort.sortProperty === obj.sortProperty ? 'active' : ''}
               >
                 {obj.name}
               </li>
@@ -49,8 +54,3 @@ function Sort({ value, onChangeSort }) {
 }
 
 export default Sort;
-
-Sort.propTypes = {
-  value: PropTypes.object,
-  onChangeSort: PropTypes.func,
-};
